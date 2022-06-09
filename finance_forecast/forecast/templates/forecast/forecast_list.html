@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<h1>Program List</h1>
+
+    <div class="container">
+      <br>
+      <h2>Forecast List</h2>
+      <table class = 'table'>
+        <tbody>
+          <tr>
+            <th>Program</th>
+            <th>Line Item</th>
+            <th>Quater Period</th>
+            <th>Amount</th>
+            <th>Update</th>
+
+          </tr>
+          {% for pgm in forecast_list %}
+          <tr>
+            <td>{{pgm.program}}</td>
+            <td>{{pgm.line_item}}</td>
+            <td>{{pgm.quarter_period}}</td>
+            <td>{{pgm.amt}}</td>
+            <!-- <td>{{pgm.program_manager}}</td>
+            <td>{{pgm.sbe_2}}</td> -->
+            <td><a class = 'btn btn-primary' href="{% url 'forecast_edit' pk=pgm.pk %}">Update Forecast</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+{% endblock %}

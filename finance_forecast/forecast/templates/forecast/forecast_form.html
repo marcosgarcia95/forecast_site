@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <h1>Test</h1>
+    <br>
+    <h1>Enter/Update Forecast</h1>
+    <div class="container">
+      <form class="" method="post">
+        {% csrf_token %}
+        <br><br>
+        {{form.as_ul}}
+        <button type="submit" name="button" class = 'save btn btn-primary'>Submit</button>
+      </form>
+
+    </div>
+
+
+{% endblock %}

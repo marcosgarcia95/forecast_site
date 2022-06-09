@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<h1>Program List</h1>
+
+    <div class="container">
+      <br>
+      <h2>Program List</h2>
+      <table class = 'table'>
+        <tbody>
+          <tr>
+            <th>Program</th>
+            <th>Program Manager</th>
+            <th>SBE-2</th>
+            <th>Update</th>
+          </tr>
+          {% for pgm in program_list %}
+          <tr>
+            <td><a href="{% url 'program_detail' pk=pgm.pk %}">{{pgm.program}}</a></td>
+            <td>{{pgm.program_manager}}</td>
+            <td>{{pgm.sbe_2}}</td>
+            <td><a class = 'btn btn-primary' href="{% url 'forecast_list' %}">Update Forecast</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+{% endblock %}
