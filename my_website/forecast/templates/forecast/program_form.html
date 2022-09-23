@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+    {% comment %} <h1>Test</h1> {% endcomment %}
+    <br>
+    <div class="container">
+        <h1>Enter/Update Program</h1>
+
+        <form class="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" name="button" class = 'save btn btn-primary'>Submit</button>
+            <a class = 'btn btn-secondary' href = {% url 'program_list' %}>Cancel</a>
+            
+        </form>
+        
+    </div>
+
+
+{% endblock %}

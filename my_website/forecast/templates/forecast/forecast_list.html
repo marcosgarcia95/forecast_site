@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% comment %} <h1>Program List</h1> {% endcomment %}
+
+    <div class="container">
+      <br>
+      <h2>Forecast List</h2>
+      <br>
+      <a class = 'btn btn-primary' href="{% url 'forecast_form' %}">Quick Forecast Input</a>
+      <br><br>
+      <table class = 'table'>
+        <tbody>
+          <tr>
+            <th>Program</th>
+            <th>Line Item</th>
+            <th>Quater Period</th>
+            <th>Amount</th>
+            <th>Comment</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+          </tr>
+          {% for pgm in forecast_list %}
+          <tr>
+            <td>{{pgm.program}}</td>
+            <td>{{pgm.line_item}}</td>
+            <td>{{pgm.quarter_period}}</td>
+            <td>{{pgm.amt}}</td>
+            <td>{{pgm.comment}}</td>
+            <!-- <td>{{pgm.program_manager}}</td>
+            <td>{{pgm.sbe_2}}</td> -->
+            <td><a class = 'btn btn-outline-primary' href="{% url 'forecast_edit' pk=pgm.pk %}">Update Forecast</a></td>
+            <td><a class = 'btn btn-outline-danger' href="{% url 'forecast_delete' pk=pgm.pk %}">Delete Forecast</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+{% endblock %}

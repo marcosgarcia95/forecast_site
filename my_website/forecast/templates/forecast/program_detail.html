@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% comment %} <h1>Test</h1> {% endcomment %}
+<div class="container">
+  <br>
+  <h1>Details</h1>
+  <table class = 'table'>
+    <thead>
+      <th>Attribute</th>
+      <th>Value</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td>{{program.program}}</td>
+      </tr>
+      <tr>
+        <td>Program Manager:</td>
+        <td>{{program.program_manager}}</td>
+      </tr>
+      <tr>
+        <td>Primary Key:</td>
+        <td>{{program.pk}}</td>
+      </tr>
+      <tr>
+        <td>Forecast this Cycle:</td>
+        <td>{{program.forecast_this_cycle}}</td>
+      </tr>
+      <tr>
+        <td>IO List:</td>
+        <td>{{program.internal_ord_list}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

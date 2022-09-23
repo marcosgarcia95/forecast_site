@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<div class="container">
+  <br>
+  {% comment %} <h1>Details</h1> {% endcomment %}
+  <h2>Delete the forecast below?</h1>
+
+    <table class = 'table'>
+        <tbody>
+            <tr>
+                <th>Program</th>
+                <th>Line Item</th>
+                <th>Quarter</th>
+                <th>Amt</th>
+                <th>Comment</th>
+            </tr>
+            <tr>
+                <td>{{forecast.program}}</td>
+                <td>{{forecast.line_item}}</td>
+                <td>{{forecast.quarter_period}}</td>
+                <td>{{forecast.amt}}</td>
+                <td>{{forecast.comment}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form method = 'POST'>
+        {% csrf_token %}
+        <input type = 'submit' class='btn btn-danger' value="Delete">
+        <a class = 'btn btn-secondary' href = {% url 'forecast_list' %}>Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

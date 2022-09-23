@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+    <br>
+    <h2 class = 'header-forecast-form'>Filter Forecast</h2>
+    <div class = 'container'>
+        <form method="get">
+            {% csrf_token %}
+            {{ filter.form.as_p }}
+            <input type="submit" />
+            <!-- <button type="submit" name="button" class = 'btn btn-primary'>Submit</button>
+            <a class = 'btn btn-secondary' href = {% url 'forecast_list' %}>Cancel</a> -->
+        </form>
+    
+    </div>
+    
+{% endblock %}
